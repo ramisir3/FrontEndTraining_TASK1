@@ -5,216 +5,231 @@
 
 * {
     font-family: "Nunito Sans";
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: auto;
+    padding-top: 10px;
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 1px 10px -7px #858585;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 900;
+    padding-right: 10%;
+}
+
+.btn {
+    padding-left: 10%;
+    border: none;
+    background: none;
+    font-size: 20px;
+}
+
+button i {
+    padding: 5px;
+}
+
+.main {
+    padding-top: 130px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.searchAndFilter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50%;
+    height: 100px;
+}
+
+.searchBar {
+    background-color: white;
+    padding-left: 1em;
+    padding: 0.2em 1em 0.2em 1em;
+    /* same as 0.2em 1em*/
+    border-width: 2px;
+    border-radius: 2px;
+    width: 100%;
+    box-shadow: 0 3px 10px -7px #858585;
+}
+
+.searchBox {
+    padding-left: 30px;
+    border: none;
+    font-size: 25px;
+    width: 80%;
+    height: 80px;
+}
+
+.dropbtn {
+    background-color: #ffffff;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 3px 10px -7px #858585;
+    border-radius: 5px;
+}
+
+.filter {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    justify-content: space-around;
+    margin-right: 5.2%;
+}
+
+.dropbtn i {
+    margin-left: 20%;
+}
+
+.Regions {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 1.5px;
+}
+
+.Regions a {
+    color: black;
+    padding: 7px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.Regions a:hover {
+    background-color: #ddd;
+}
+
+.filter:hover .Regions {
+    display: block;
+}
+
+.searchBar>i {
+    color: #858585;
+}
+
+.flagGrid {
+    display: block;
+    margin-top: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.gridItem {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 1px 5px -3px #858585;
+    border-radius: 8px;
+}
+
+.itemInfo {
+    padding: 2%;
+    font-size: 30px;
+}
+
+.flagImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #000000;
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 1350px) {
     header {
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         gap: 70%;
-        margin-top: -10px;
-        position: fixed;
         height: 10%;
-        width: 100%;
-        margin-left: -10px;
-        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(0, 0, 0, 0.19);
+        padding: 0 100px;
     }
 
     .title {
         font-size: 20px;
-        font-weight: 800;
+        padding: 0;
     }
 
     .btn {
         padding: 0;
-        border: none;
-        background: none;
-    }
-
-    button i {
-        padding: 5px;
+        font-size: 14px;
     }
 
     .main {
-        background-color: #fafafa;
         padding-top: 100px;
-        padding-left: 5%;
-        padding-right: 5%;
     }
 
     .searchAndFilter {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 40%;
-        margin-right: 3%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 20%;
+        margin: 0 3%;
+        height: auto;
     }
 
     .searchBar {
-        width: 50%;
-        background-color: white;
-        padding-left: 1em;
-        padding: 0.2em 1em 0.2em 1em;
-        border-width: 2px;
-        border-radius: 2px;
+        display: flex;
+        width: 500px;
+        height: 50px;
+        align-items: center;
+        justify-content: space-around;
     }
 
     .searchBox {
-        padding-left: 20px;
-        width: 80%;
-        border: none;
+        height: auto;
+        font-size: 14px;
     }
-
-    .filter {
-        width: 12%;
-        padding: 5px;
-    }
-
 
     .flagGrid {
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
-        padding: 10px;
+        margin: 30px 40px;
+        row-gap: 5%;
     }
 
     .gridItem {
         margin-top: 10px;
         margin-bottom: 10px;
-        width: 90%;
-        background-color: white;
-        border-radius: 2px;
+        width: 240px;
+        height: 300px;
     }
 
     .itemInfo {
-        padding: 2%;
+        padding: 0;
+        margin: 10%;
+        font-size: small;
     }
 
     .flagImg {
-        width: 100%;
-        height: 200px;
-    }
-
-    a:link,
-    a:visited,
-    a:hover,
-    a:active {
-        color: #000000;
-        text-decoration: none;
-    }
-
-}
-
-@media only screen and (max-width: 1350px) {
-    header {
-        background-color: white;
-        display: flex;
-        margin-top: -10px;
-        align-items: center;
-        justify-content: center;
-        gap: auto;
-        padding-top: 10px;
-        position: fixed;
-        height: 100px;
-        width: 100%;
-        margin-left: -10px;
-        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(0, 0, 0, 0.19);
-    }
-
-    .title {
-        font-size: 50px;
-        font-weight: 800;
-        padding-right: 10%;
-    }
-
-    .btn {
-        padding-left: 10%;
-        border: none;
-        background: none;
-        font-size: 20px;
-
-    }
-
-    button i {
-        padding: 5px;
-    }
-
-    .main {
-        background-color: #fafafa;
-        padding-top: 130px;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .searchAndFilter {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 50%;
-        height: 100px;
-    }
-
-    .searchBar {
-        background-color: white;
-        padding-left: 1em;
-        padding: 0.2em 1em 0.2em 1em;
-        border-width: 2px;
-        border-radius: 2px;
-        width: 100%;
-    }
-
-    .searchBox {
-        padding-left: 30px;
-        border: none;
-        font-size: 25px;
-        width: 80%;
-        height: 80px;
-    }
-
-    .filter {
-        font-size: 20px;
-        width: 30%;
-        height: 70%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding: 10px;
-    }
-
-    .filter>option {
-        font-size: 10px;
-    }
-
-    .flagGrid {
-        display: block;
-        margin-top: 20%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .gridItem {
-        margin-top: 20px;
-        margin-bottom: 40px;
-        width: 90%;
-        background-color: white;
-    }
-
-    .itemInfo {
-        padding: 2%;
-        font-size: 30px;
-    }
-
-    .flagImg {
-        width: 100%;
-        height: 100%;
-    }
-
-    a:link,
-    a:visited,
-    a:hover,
-    a:active {
-        color: #000000;
-        text-decoration: none;
+        width: 240px;
+        height: 150px;
     }
 }
