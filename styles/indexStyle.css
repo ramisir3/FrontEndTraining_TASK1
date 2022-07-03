@@ -13,31 +13,26 @@ body {
 }
 
 header {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: auto;
-    padding-top: 10px;
     position: fixed;
     top: 0;
-    height: 100px;
+    height: 150px;
     width: 100%;
     left: 0;
     box-shadow: 0 1px 10px -7px #858585;
+    z-index: 2;
 }
 
 .title {
-    font-size: 50px;
-    font-weight: 900;
-    padding-right: 10%;
+    font-size: 30px;
+    font-weight: 800;
 }
 
-.btn {
+.darkModeBTN {
     padding-left: 10%;
     border: none;
     background: none;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 800;
 }
 
 button i {
@@ -45,55 +40,47 @@ button i {
 }
 
 .main {
-    padding-top: 130px;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-top: 180px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .searchAndFilter {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 50%;
     height: 100px;
 }
 
 .searchBar {
     background-color: white;
-    padding-left: 1em;
-    padding: 0.2em 1em 0.2em 1em;
-    /* same as 0.2em 1em*/
     border-width: 2px;
     border-radius: 2px;
-    width: 100%;
     box-shadow: 0 3px 10px -7px #858585;
 }
 
 .searchBox {
-    padding-left: 30px;
     border: none;
     font-size: 25px;
-    width: 80%;
+    width: 85%;
     height: 80px;
+}
+
+
+.filter {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    font-size: 25px;
+    margin-right: 5.2%;
+    padding: 0 !important;
 }
 
 .dropbtn {
     background-color: #ffffff;
-    font-size: 14px;
     border: none;
     width: 100%;
     height: 100%;
     box-shadow: 0 3px 10px -7px #858585;
     border-radius: 5px;
-}
-
-.filter {
-    display: inline-block;
-    width: 200px;
-    height: 50px;
-    justify-content: space-around;
-    margin-right: 5.2%;
 }
 
 .dropbtn i {
@@ -104,7 +91,7 @@ button i {
     display: none;
     position: absolute;
     background-color: #ffffff;
-    width: 200px;
+    width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
@@ -132,28 +119,34 @@ button i {
 
 .flagGrid {
     display: block;
-    margin-top: 20%;
+    margin-top: 40px;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.container {
+    margin-top: 220px;
 }
 
 .gridItem {
     margin-top: 20px;
     margin-bottom: 40px;
-    width: 90%;
-    background-color: white;
     box-shadow: 0 1px 5px -3px #858585;
     border-radius: 8px;
 }
 
 .itemInfo {
-    padding: 2%;
     font-size: 30px;
+}
+
+h5 {
+    font-weight: 800 !important;
+    font-size: 35px !important;
 }
 
 .flagImg {
     width: 100%;
-    height: 100%;
+    height: 30%;
     object-fit: cover;
     border-radius: 6px 6px 0 0;
 }
@@ -162,42 +155,36 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-    color: #000000;
-    text-decoration: none;
+    color: #000000 !important;
+    text-decoration: none !important;
 }
 
-@media only screen and (min-width: 1350px) {
+
+@media only screen and (min-width: 1400px) {
     header {
         gap: 70%;
-        height: 10%;
-        padding: 0 100px;
+        height: 70px;
     }
 
     .title {
         font-size: 20px;
-        padding: 0;
     }
 
-    .btn {
+    .darkModeBTN {
         padding: 0;
         font-size: 14px;
     }
 
     .main {
-        padding-top: 100px;
+        margin-top: 120px;
     }
 
     .searchAndFilter {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        gap: 20%;
-        margin: 0 3%;
         height: auto;
     }
 
     .searchBar {
         display: flex;
-        width: 500px;
         height: 50px;
         align-items: center;
         justify-content: space-around;
@@ -208,17 +195,13 @@ a:active {
         font-size: 14px;
     }
 
-    .flagGrid {
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        margin: 30px 40px;
-        row-gap: 5%;
+    .filter {
+        font-size: 14px;
+        height: 50px;
     }
 
     .gridItem {
         margin-top: 10px;
-        margin-bottom: 10px;
-        width: 240px;
         height: 300px;
     }
 
@@ -228,8 +211,13 @@ a:active {
         font-size: small;
     }
 
+    h5 {
+        font-weight: 600 !important;
+        font-size: 16px !important;
+    }
+
     .flagImg {
-        width: 240px;
+        width: 100%;
         height: 150px;
     }
 }

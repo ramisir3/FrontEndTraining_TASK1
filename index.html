@@ -3,23 +3,35 @@
 
 <head>
     <title>Where in the world?</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="styles/indexStyle.css">
     <script src="https://kit.fontawesome.com/dcc0b74bd7.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <header>
-        <div class="title">Where in the world?</div>
-        <button class="btn" type="button"><i class="far fa-moon"></i>Dark Mode</button>
+<body style="background-color: #fafafa;">
+    <header class="bg-white">
+        <div class="d-flex row mt-5 mt-xl-1 mx-xxl-4">
+            <div class="title mt-3 ms-auto ps-xl-4 col-xl-3 col-5">Where in the world?</div>
+            <div class="col-xl-5 col-3"></div>
+            <div class="col-xl-3 col-3 ms-xl-4 me-xl-2 pt-xl-3 pt-2 ps-xl-5">
+                <button class="darkModeBTN ms-xl-5" type="button"><i class="far fa-moon" aria-hidden="true"></i>Dark
+                    Mode</button>
+            </div>
+        </div>
     </header>
-    <div class="main">
-        <div class="searchAndFilter">
-            <div class="searchBar">
-                <i class="fa-solid fa-search"></i>
+    <div class="main container">
+        <div class="searchAndFilter d-flex row justify-content-between gap-3 flex-sm-wrap flex-xxl-nowrap mx-xxl-4">
+            <div class="searchBar px-4 py-1 col-sm-12 col-xxl-4">
+                <i class="fa-solid fa-search px-3"></i>
                 <input class="searchBox" type="search" name="search" id="search" placeholder="Search for a country...">
             </div>
-
-            <div class="filter">
+            <div class="col-xxl-5"></div>
+            <div class="filter col-xxl-2 col-sm-5  mt-sm-5 mt-xxl-0">
                 <button class="dropbtn">Filter by Region<i class="fa-solid fa-angle-down"></i></button>
                 <div class="Regions">
                     <a href="#">Africa</a>
@@ -31,79 +43,99 @@
             </div>
         </div>
 
-        <div class="flagGrid">
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/de.svg" alt="germany" class="flagImg">
-                <div class="itemInfo">
-                    <h3>Germany</h3>
-                    <div><strong>Population:</strong> 81,1770,900</div>
-                    <div><strong>Region:</strong> Europe</div>
-                    <div><strong>Capital:</strong> Berlin</div>
+        <div class="container mt-xxl-4">
+            <div class="row row-flex flex-xxl-nowrap justify-content-between me-5">
+                <div class="col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src="./flags/de.svg" alt="germany" class="flagImg card-img-top">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">Germany</h5>
+                            <div class="card-text"><strong>Population:</strong> 81,1770,900</div>
+                            <div class="card-text"><strong>Region:</strong> Europe</div>
+                            <div class="card-text"><strong>Capital:</strong> Berlin</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/us.svg" alt="us" class="flagImg">
-                <div class="itemInfo">
-                    <h3>United States of America</h3>
-                    <div><strong>Population:</strong> 323,947,000</div>
-                    <div><strong>Region:</strong> Americas</div>
-                    <div><strong>Capital:</strong> Washington, D.C.</div>
+                <div class="col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/us.svg" alt="us" class="card-img-top flagImg">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">United States of America</h5>
+                            <div class="card-text"><strong>Population:</strong> 323,947,000</div>
+                            <div class="card-text"><strong>Region:</strong> Americas</div>
+                            <div class="card-text"><strong>Capital:</strong> Washington, D.C.</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/br.svg" alt="brazil" class="flagImg">
-                <div class="itemInfo">
-                    <h3>Brazil</h3>
-                    <div><strong>Population:</strong> 206,135,893</div>
-                    <div><strong>Region:</strong> Americas</div>
-                    <div><strong>Capital:</strong> Brasilia</div>
+                <div class="col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/br.svg" alt="brazil" class="card-img-top flagImg">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">Brazil</h5>
+                            <div class="card-text"><strong>Population:</strong> 206,135,893</div>
+                            <div class="card-text"><strong>Region:</strong> Americas</div>
+                            <div class="card-text"><strong>Capital:</strong> Brasilia</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/is.svg" alt="iceland" class="flagImg">
-                <div class="itemInfo">
-                    <h3>Iceland</h3>
-                    <div><strong>Population:</strong> 334,300</div>
-                    <div><strong>Region:</strong> Europe</div>
-                    <div><strong>Capital:</strong> Reykjavik</div>
+                <div class="col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/is.svg" alt="iceland" class="card-img-top flagImg">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">Iceland</h5>
+                            <div class="card-text"><strong>Population:</strong> 334,300</div>
+                            <div class="card-text"><strong>Region:</strong> Europe</div>
+                            <div class="card-text"><strong>Capital:</strong> Reykjavik</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/af.svg" alt="afghanistan" class="flagImg">
-                <div class="itemInfo">
-                    <h3> Afghanistan</h3>
-                    <div><strong>Population:</strong> 27,657,145</div>
-                    <div><strong>Region:</strong> Asia</div>
-                    <div><strong>Capital:</strong> Kabul</div>
+            </div>
+            <div class="row row-flex me-5">
+                <div class=" col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/af.svg" alt="afghanistan" class="flagImg card-img-top">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0"> Afghanistan</h5>
+                            <div class="card-text"><strong>Population:</strong> 27,657,145</div>
+                            <div class="card-text"><strong>Region:</strong> Asia</div>
+                            <div class="card-text"><strong>Capital:</strong> Kabul</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/ax.svg" alt="aland" class="flagImg">
-                <div class="itemInfo">
-                    <h3>Aland Islands</h3>
-                    <div><strong>Population:</strong> 28,875</div>
-                    <div><strong>Region:</strong> Europe</div>
-                    <div><strong>Capital:</strong> Mariehamn</div>
+                <div class=" col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/ax.svg" alt="aland" class="flagImg card-img-top">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">Aland Islands</h5>
+                            <div class="card-text"><strong>Population:</strong> 28,875</div>
+                            <div class="card-text"><strong>Region:</strong> Europe</div>
+                            <div class="card-text"><strong>Capital:</strong> Mariehamn</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/al.svg" alt="albania" class="flagImg">
-                <div class="itemInfo">
-                    <h3>Alabnia</h3>
-                    <div><strong>Population:</strong> 2,886,026</div>
-                    <div><strong>Region:</strong> Europe</div>
-                    <div><strong>Capital:</strong> Tirana</div>
+                <div class=" col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/al.svg" alt="albania" class="flagImg card-img-top">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">Alabnia</h5>
+                            <div class="card-text"><strong>Population:</strong> 2,886,026</div>
+                            <div class="card-text"><strong>Region:</strong> Europe</div>
+                            <div class="card-text"><strong>Capital:</strong> Tirana</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a href="./details.html" class="gridItem">
-                <img src="./flags/dz.svg" alt="algeria" class="flagImg">
-                <div class="itemInfo">
-                    <h3>Algeria</h3>
-                    <div><strong>Population:</strong> 40,400,000</div>
-                    <div><strong>Region:</strong> Africa</div>
-                    <div><strong>Capital:</strong> Algiers</div>
+                <div class=" col-xxl m-3 mt-0">
+                    <a href="./details.html" class="gridItem card rounded w-100">
+                        <img src=" ./flags/dz.svg" alt="algeria" class="flagImg card-img-top">
+                        <div class="itemInfo  p-5 p-xl-0">
+                            <h5 class="card-title mb-4 mb-xxl-0">Algeria</h5>
+                            <div class="card-text"><strong>Population:</strong> 40,400,000</div>
+                            <div class="card-text"><strong>Region:</strong> Africa</div>
+                            <div class="card-text"><strong>Capital:</strong> Algiers</div>
+                        </div>
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
 
     </div>
