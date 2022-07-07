@@ -4,30 +4,30 @@ The task was to create two web pages from the design provided in the screenshots
 The first page contains a list of countries, and the second page has more details about a country. For now, every country you click redirects you to the page containing info about Belgium, because there is no Javascript yet.
 Included here are the screenshots of the result of this task:
 
-|![homepage1-Desktop](https://user-images.githubusercontent.com/54281674/176107044-1eecc64e-785b-430a-a25d-e0d1cb11273f.jpg)|
+|![homepage1-Desktop](https://user-images.githubusercontent.com/54281674/177019854-a7cc9fb6-18d2-4921-8fbe-6dfae411209e.jpg)|
 |:--:| 
 |*Desktop home page*|  <br />
 <br />
 <br />
 
-|![homepage1-Mobile](https://user-images.githubusercontent.com/54281674/176107116-98fa50f5-783b-471e-95f2-d9df4fd02e88.jpg)|
+|![homepage1-Mobile](https://user-images.githubusercontent.com/54281674/177019859-ddb7d182-d89e-407d-8cf7-2098827e4f36.jpg)|
 |:--:| 
 |*Mobile home page*|  <br />
 <br />
 <br />
 
-|![homepage2-Mobile](https://user-images.githubusercontent.com/54281674/176107153-856dd722-791e-436a-89a7-32f8c01aca27.jpg)|
+|![homepage2-Mobile](https://user-images.githubusercontent.com/54281674/177019861-ff6d0ac0-5c79-4b4c-8b9d-e2db19d7f006.jpg)|
 |:--:| 
 |*Mobile home page scroll*| <br /> 
 <br />
 <br />
 
-|![detailspage-desktop](https://user-images.githubusercontent.com/54281674/176107206-f21281e2-8058-4230-8c10-af87581b56bd.jpg)|
+|![detailspage-desktop](https://user-images.githubusercontent.com/54281674/177019863-ebcd4c72-d223-4e6e-a0e2-80b759b3e980.jpg)|
 |:--:| 
 |*Desktop Details page*|  <br />
 <br />
 <br />
 
-|![detailspage-mobile](https://user-images.githubusercontent.com/54281674/176107237-0eb98865-d1a9-47f8-a340-6379d7d0d9ac.jpg)|
+|![detailspage-mobile](https://user-images.githubusercontent.com/54281674/177019869-fe159d45-059c-4974-8de5-fe4dddbef3c5.jpg)|
 |:--:| 
 |*Mobile Details page*|  
