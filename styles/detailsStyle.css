@@ -50,11 +50,15 @@ header {
     font-weight: 800;
 }
 
+.darkModeDiv {
+    width: 25%;
+}
+
 .darkModeBTN {
     padding-left: 10%;
     border: none;
     background: none;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 800;
 }
 
@@ -96,6 +100,9 @@ button i {
     margin-top: 30px;
     padding-left: 20%;
     padding-right: 20%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
 }
 
 .details {
@@ -138,6 +145,10 @@ h2 {
     .darkModeBTN {
         padding: 0;
         font-size: 14px;
+    }
+
+    .darkModeDiv {
+        width: auto;
     }
 
     .backBtn {
