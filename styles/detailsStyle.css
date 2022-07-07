@@ -8,14 +8,41 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #fafafa !important;
+}
+
+.very-dark-back {
+    background-color: #202c37 !important;
+}
+
+.dark-back {
+    background-color: #2b3945 !important;
+    color: white;
+}
+
+.dark-ref {
+    background-color: #2b3945 !important;
+    color: white !important;
+}
+
 header {
     position: fixed;
+    background-color: white;
     top: 0;
-    height: 150px;
+    /* height: 150px; */
     width: 100%;
     left: 0;
     box-shadow: 0 1px 10px -7px #858585;
     z-index: 2;
+}
+
+.whiteFont {
+    color: white;
+}
+
+.headerContainer {
+    height: 80px;
 }
 
 .title {
@@ -33,6 +60,10 @@ header {
 
 button i {
     padding: 5px;
+}
+
+.dark-icon {
+    color: white !important;
 }
 
 .backBtn {
@@ -99,10 +130,6 @@ h2 {
 }
 
 @media only screen and (min-width: 1350px) {
-    header {
-        gap: 70%;
-        height: 70px;
-    }
 
     .title {
         font-size: 20px;
@@ -117,7 +144,7 @@ h2 {
         width: 8%;
         height: 30px;
         margin-top: 0;
-        margin-left: 5%;
+        /* margin-left: 5%; */
         font-size: 14px;
     }
 
@@ -131,7 +158,9 @@ h2 {
 
     .countryBtn {
         margin-left: 10px;
-        width: 20%;
+        margin-bottom: 10px;
+        width: fit-content;
+        /* height: fit-content; */
     }
 
     .details {
