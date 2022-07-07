@@ -58,7 +58,7 @@ function searchFilter() {
     allCountries.forEach(element => {
         if (element.name.common.toLowerCase().includes(s)) {
             results += `<div class="col-xxl-3">
-                    <a name="dark" href="./details.html?country=${element.name.common}" class="${getCookie('darkMode') == "1" ? "dark-back " : ""}gridItem card rounded w-100">
+                    <a name="dark" href="./details.html?country=${element.name.common}" class="${getCookie('darkMode') == "1" ? "darkShadow " : ""}gridItem card rounded w-100">
                         <img src="${element.flags.svg}" alt="${element.name.common}" class="flagImg card-img-top">
                         <div class="itemInfo  p-5 p-xl-0">
                             <h5 name="dark" class="${getCookie('darkMode') == "1" ? "dark-back " : ""}card-title mb-4 mb-xxl-2">${element.name.common}</h5>
@@ -102,6 +102,10 @@ function switchMode() {
     let dark = document.getElementsByName("dark");
     dark.forEach(element => {
         element.classList.toggle("dark-back");
+    });
+    let shadow = document.getElementsByName("darkshadow");
+    shadow.forEach(element => {
+        element.classList.toggle("darkShadow");
     });
     document.getElementById("search").classList.toggle("search-dark");
     let icons = document.getElementsByName("icon");

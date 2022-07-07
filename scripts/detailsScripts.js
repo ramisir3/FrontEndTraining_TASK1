@@ -50,14 +50,14 @@ async function getCountry() {
             try {
                 let res = await fetch(url);
                 let borderCountry = await res.json();
-                bodyHTML = `<button name="dark" class="${getCookie('darkMode') == "1" ? "dark-back " : ""} backBtn countryBtn" type="button" onclick="location.href='details.html?country=${borderCountry[0].name.common}'">${borderCountry[0].name.common}</button>`
-                document.getElementsByClassName("countriesBtns")[0].innerHTML+=bodyHTML
+                bodyHTML = `<button name="dark" class="${getCookie('darkMode') == "1" ? "darkshadow " : ""} backBtn countryBtn" type="button" onclick="location.href='details.html?country=${borderCountry[0].name.common}'">${borderCountry[0].name.common}</button>`
+                document.getElementsByClassName("countriesBtns")[0].innerHTML += bodyHTML
             } catch (error) {
                 console.log(error);
             }
         })
     } else {
-        document.getElementsByClassName("countriesBtns")[0].innerHTML += `<button name="dark" class="backBtn countryBtn" type="button">None</button>`
+        document.getElementsByClassName("countriesBtns")[0].innerHTML += `<button name="darkshadow" class="backBtn countryBtn" type="button">None</button>`
     }
 
 }
@@ -88,6 +88,10 @@ function switchMode() {
     let icons = document.getElementsByName("icon");
     icons.forEach(element => {
         element.classList.toggle("dark-icon");
+    });
+    let shadow = document.getElementsByName("darkshadow");
+    shadow.forEach(element => {
+        element.classList.toggle("darkShadow");
     });
 
     let text = document.getElementsByName("text");

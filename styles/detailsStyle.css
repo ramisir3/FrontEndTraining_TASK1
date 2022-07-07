@@ -25,6 +25,11 @@ body {
     background-color: #2b3945 !important;
     color: white !important;
 }
+.darkShadow {
+    background-color: #2b3945 !important;
+    color: white;
+    box-shadow: 0 3px 10px -7px #202c37 !important;
+}
 
 header {
     position: fixed;

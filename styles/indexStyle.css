@@ -99,6 +99,11 @@ button i {
     opacity: 1;
 }
 
+.darkShadow {
+    background-color: #2b3945 !important;
+    color: white;
+    box-shadow: 0 3px 10px -7px #202c37!important;
+}
 
 .filter {
     display: inline-block;
