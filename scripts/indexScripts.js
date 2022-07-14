@@ -22,7 +22,6 @@ async function searchFilter(listFilter) {
     if (s !== null && s !== '') {
         let url = 'https://restcountries.com/v3.1/name/';
         res = await fetchCountriesAPI(url, s);
-        console.log(document.getElementById("search").value == s);
         if (document.getElementById("search").value == s) {
             if (res.status != 404) {
                 results = filterCountries(filter, res);
