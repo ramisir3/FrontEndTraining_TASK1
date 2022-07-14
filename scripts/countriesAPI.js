@@ -10,3 +10,33 @@ async function fetchCountriesAPI(url, name) {
         // console.log(error);
     }
 }
+async function fetchAllCountriesAPI() {
+    let url = 'https://restcountries.com/v3.1/all';
+    try {
+        var res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        // console.log(error);
+    }
+}
+
+
+async function fetchCountriesByName(name) {
+    let url = 'https://restcountries.com/v3.1/name/' + name;
+    try {
+        var res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        // console.log(error);
+    }
+}
+
+async function fetchCountriesAlpha(name) {
+    let url = 'https://restcountries.com/v3.1/alpha/' + name;
+    try {
+        var res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        // console.log(error);
+    }
+}

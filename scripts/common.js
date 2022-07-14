@@ -27,3 +27,13 @@ function switchMode(page) {
         element.classList.toggle("dark-ref");
     });
 }
+
+function checkMode(className) {
+    let mode;
+    if (className) {
+        mode = JSON.parse(window.localStorage.getItem('darkMode')) == true ? className : '';
+    } else {
+        mode = JSON.parse(window.localStorage.getItem('darkMode'));
+    }
+    return mode;
+}

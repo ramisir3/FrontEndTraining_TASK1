@@ -32,19 +32,18 @@ body {
     box-shadow: 0 3px 10px -7px #202c37 !important;
 }
 
+.whiteFont {
+    color: white;
+}
+
 header {
     position: fixed;
     background-color: white;
     top: 0;
-    /* height: 150px; */
     width: 100%;
     left: 0;
     box-shadow: 0 1px 10px -7px #858585;
     z-index: 2;
-}
-
-.whiteFont {
-    color: white;
 }
 
 .headerContainer {
@@ -94,7 +93,7 @@ button i {
 }
 
 .countryBtn {
-    width: 30%;
+    width: fit-content;
     margin-top: 0;
     font-size: 25px;
 }
@@ -102,13 +101,14 @@ button i {
 .countriesBtns {
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
     margin-top: 30px;
     padding-left: 20%;
     padding-right: 20%;
     margin-left: 10px;
     margin-bottom: 10px;
     width: fit-content;
+    justify-content: space-evenly;
 }
 
 .details {
@@ -142,6 +142,25 @@ h2 {
     font-size: 25px;
 }
 
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none !important;
+    width: fit-content;
+    padding: 5px;
+    margin: 5px;
+}
+
+.dark-ref {
+    color: white !important;
+    background-color: #2b3945 !important;
+}
+
+.dark-ref:hover {
+    color: #fafafa !important;
+}
+
 @media only screen and (min-width: 1350px) {
 
     .title {
@@ -161,23 +180,19 @@ h2 {
         width: 8%;
         height: 30px;
         margin-top: 0;
-        /* margin-left: 5%; */
         font-size: 14px;
     }
 
     .countriesBtns {
-        display: block;
         margin: 0;
         padding: 0;
         width: 100%;
-        text-align: left;
+        justify-content: left;
     }
 
     .countryBtn {
         margin-left: 10px;
         margin-bottom: 10px;
-        width: fit-content;
-        /* height: fit-content; */
     }
 
     .details {
@@ -204,5 +219,4 @@ h2 {
         width: 100%;
         height: 20px;
     }
-
 }

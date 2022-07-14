@@ -1,8 +1,7 @@
 var allCountries;
 async function renderCountries() {
     if (!allCountries) {
-        let url = 'https://restcountries.com/v3.1/all';
-        allCountries = await fetchCountriesAPI(url);
+        allCountries = await fetchAllCountriesAPI();
     }
     let result = filterCountries(document.getElementById("filter").innerText, allCountries);
     document.getElementById("countriesBody").innerHTML = result;
@@ -17,11 +16,10 @@ async function searchFilter(listFilter) {
         document.getElementById("filter").innerHTML = "Filter by Region" + `<i class="fa-solid fa-angle-down" ></i > `;
     }
     let filter = document.getElementById("filter").innerText;
-    let mode = JSON.parse(window.localStorage.getItem('darkMode')) == true ? 'dark-back ' : '';
+    let mode = checkMode('dark-back ');
     let res;
-    if (s !== null && s !== '') {
-        let url = 'https://restcountries.com/v3.1/name/';
-        res = await fetchCountriesAPI(url, s);
+    if (s) {
+        res = await fetchCountriesByName(s);
         if (document.getElementById("search").value == s) {
             if (res.status != 404) {
                 results = filterCountries(filter, res);
@@ -43,13 +41,16 @@ async function searchFilter(listFilter) {
 
 function filterCountries(filter, res) {
     let results = '';
-    let mode = JSON.parse(window.localStorage.getItem('darkMode')) == true ? 'dark-back ' : '';
+    let mode = checkMode('dark-back ');
     res.forEach(element => {
         if ((filter.length < 10 && element.region != filter)) {
+            //if filter is set and the country does not match, skip this country(continue loop).
+            //filter text can be (Africa, America, Asia, Europe, Oceania) or the default (Filter by Region).
+            //using the length of the string from the filter list, we can know if a filter is set.
             return;
-        } else {
-            if (element.region == filter || filter.length > 10) {
-                results += `<div class="col-xxl-3">
+        } else if (element.region == filter || filter.length > 10) {
+            //if the country is in the filter, or there isn't a filter, add country.
+            results += `<div class="col-xxl-3">
                                                 <a name="dark" href="./details.html?country=${element.name.common}" class="${mode}gridItem card rounded w-100">
                                                     <img src="${element.flags.svg}" alt="${element.name.common}" class="flagImg card-img-top">
                                                     <div class="itemInfo  p-5 p-xl-0">
@@ -60,7 +61,6 @@ function filterCountries(filter, res) {
                                                     </div>
                                                 </a>
                                             </div>`;
-            }
         }
     }
     );
@@ -68,7 +68,7 @@ function filterCountries(filter, res) {
 }
 
 async function loadPage() {
-    let darkMode = JSON.parse(window.localStorage.getItem('darkMode'));
+    let darkMode = checkMode();
     window.localStorage.setItem('darkMode', JSON.stringify(false));
     if (darkMode == true) {
         switchMode('index');
