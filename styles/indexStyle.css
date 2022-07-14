@@ -18,7 +18,7 @@ body {
 
 .dark-back {
     background-color: #2b3945 !important;
-    color: white;
+    color: white !important;
 }
 
 .dark-ref {
@@ -102,7 +102,7 @@ button i {
 .darkShadow {
     background-color: #2b3945 !important;
     color: white;
-    box-shadow: 0 3px 10px -7px #202c37!important;
+    box-shadow: 0 3px 10px -7px #202c37 !important;
 }
 
 .filter {

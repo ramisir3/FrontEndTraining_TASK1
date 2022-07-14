@@ -1,21 +1,13 @@
-async function fetchCountriesAPI(countryName) {
-    let url = 'https://restcountries.com/v3.1/name/' + countryName;
-    try {
-        let res = await fetch(url);
-        return await res.json();
-    } catch (error) {
-        console.log(error);
-    }
-}
-let country;
-async function getCountry() {
+async function renderCountry() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const countryName = urlParams.get('country');
-    country = (await fetchCountriesAPI(countryName))[0];
+    let url = 'https://restcountries.com/v3.1/name/';
+    let country = (await fetchCountriesAPI(url, countryName))[0];
     let bodyHTML = '';
     let lang = country.languages;
-    let languages = Object.values(lang)
+    let languages = Object.values(lang);
+    let mode = JSON.parse(window.localStorage.getItem('darkMode')) == true ? 'darkShadow ' : '';
     let segment = `<div class="col-xxl-5 col-sm-12 mb-5 mb-xxl-0">
                 <img src="${country.flags.svg}" alt="${country.name.common}" class="flagImg">
             </div>
@@ -46,11 +38,10 @@ async function getCountry() {
     let border = country.borders;
     if (border) {
         border.forEach(async element => {
-            let url = 'https://restcountries.com/v3.1/alpha/' + element;
+            let url = 'https://restcountries.com/v3.1/alpha/';
             try {
-                let res = await fetch(url);
-                let borderCountry = await res.json();
-                bodyHTML = `<button name="darkshadow" class="${getCookie('darkMode') == "1" ? "darkShadow " : ""} backBtn countryBtn" type="button" onclick="location.href='details.html?country=${borderCountry[0].name.common}'">${borderCountry[0].name.common}</button>`
+                let borderCountry = await fetchCountriesAPI(url, element);
+                bodyHTML = `<button name="darkshadow" class="${mode} backBtn countryBtn" type="button" onclick="location.href='details.html?country=${borderCountry[0].name.common}'">${borderCountry[0].name.common}</button>`
                 document.getElementsByClassName("countriesBtns")[0].innerHTML += bodyHTML
             } catch (error) {
                 console.log(error);
@@ -63,43 +54,10 @@ async function getCountry() {
 }
 
 async function loadPage() {
-    await getCountry();
-    let darkMode = getCookie("darkMode");
-    if (darkMode == 1) {
-        setCookie("darkMode", 0, 365);
+    await renderCountry();
+    let darkMode = JSON.parse(window.localStorage.getItem('darkMode'));
+    window.localStorage.setItem('darkMode', JSON.stringify(false));
+    if (darkMode == true) {
         switchMode();
-    } else {
-        setCookie("darkMode", 0, 365);
     }
-}
-
-function switchMode() {
-    if (getCookie("darkMode") == 0) {
-        setCookie("darkMode", 1, 365);
-    } else {
-        setCookie("darkMode", 0, 365);
-    }
-
-    document.getElementById("body").classList.toggle("very-dark-back");
-    let dark = document.getElementsByName("dark");
-    dark.forEach(element => {
-        element.classList.toggle("dark-back");
-    });
-    let icons = document.getElementsByName("icon");
-    icons.forEach(element => {
-        element.classList.toggle("dark-icon");
-    });
-    let shadow = document.getElementsByName("darkshadow");
-    shadow.forEach(element => {
-        element.classList.toggle("darkShadow");
-    });
-
-    let text = document.getElementsByName("text");
-    text.forEach(element => {
-        element.classList.toggle("whiteFont");
-    });
-    let refs = document.getElementsByName("dark-ref");
-    refs.forEach(element => {
-        element.classList.toggle("dark-ref");
-    });
 }
