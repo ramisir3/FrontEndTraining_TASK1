@@ -3,17 +3,27 @@ function switchMode(page) {
 
     if (page == 'index') {
         document.getElementById("search").classList.toggle("search-dark");
+        let scrollables = document.getElementsByClassName("scrolldown");
+        for (element of scrollables) {
+            element.classList.toggle("darkBar");
+            element.classList.toggle("lightBar");
+        }
+        let stars = document.getElementsByName("star");
+        stars.forEach(element => {
+            if (!favourites.includes(element.parentElement.parentElement.ID)) {
+                element.classList.toggle("starDark");
+                element.classList.toggle("starLight");
+            }
+        });
+
+    } else {
+        let refsShadow = document.getElementsByName("darkRefShadow");
+        refsShadow.forEach(element => {
+            element.classList.toggle("dark-ref-shadow");
+        });
     }
     document.getElementById("body").classList.toggle("very-dark-back");
-    let scrollables = document.getElementsByClassName("scrolldown");
-    for (element of scrollables) {
-        element.classList.toggle("darkBar");
-        element.classList.toggle("lightBar");
-    }
-    // document.getElementsByClassName("scrolldown").forEach(element => {
-    //     console.log(element);
-    //     element.classList.add((checkMode() ? "darkBar" : "lightBar"));
-    // });
+
     let dark = document.getElementsByName("dark");
     dark.forEach(element => {
         element.classList.toggle("dark-back");
@@ -31,7 +41,7 @@ function switchMode(page) {
     text.forEach(element => {
         element.classList.toggle("whiteFont");
     });
-    let refs = document.getElementsByName("darkx-ref");
+    let refs = document.getElementsByName("dark-ref");
     refs.forEach(element => {
         element.classList.toggle("dark-ref");
     });

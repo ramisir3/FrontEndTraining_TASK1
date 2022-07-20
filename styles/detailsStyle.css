@@ -93,6 +93,7 @@ button i {
 }
 
 .countryBtn {
+    color: black;
     width: fit-content;
     margin-top: 0;
     font-size: 25px;
@@ -150,11 +151,17 @@ a:active {
     width: fit-content;
     padding: 5px;
     margin: 5px;
+    color: black;
 }
 
-.dark-ref {
-    color: white !important;
+.dark-ref-shadow {
     background-color: #2b3945 !important;
+    color: white !important;
+    box-shadow: 0 3px 10px -7px #202c37 !important;
+}
+
+.dark-ref-shadow:hover {
+    color: #fafafa !important;
 }
 
 .dark-ref:hover {

@@ -195,8 +195,8 @@ h5 {
     margin-top: 30px !important;
 }
 
-.no-border{
-    border : none!important;
+.no-border {
+    border: none !important;
 }
 
 a:link,
@@ -368,5 +368,9 @@ a:active {
 
     .darkBar::-webkit-scrollbar-thumb:hover {
         background: white;
+    }
+
+    .hover-default:hover{
+        cursor: pointer;
     }
 }

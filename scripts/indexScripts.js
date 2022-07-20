@@ -70,12 +70,12 @@ function filterCountries(filter, res) {
 async function loadPage() {
     let darkMode = checkMode();
     window.localStorage.setItem('darkMode', JSON.stringify(false));
-    if (darkMode == true) {
-        switchMode('index');
-    }
     favourites = JSON.parse(window.localStorage.getItem('favourites')) || [];
     await renderCountries().then(() => {
         showFavourites("favorites-list");
+        if (darkMode == true) {
+            switchMode('index');
+        }
     });
 
 }
@@ -83,17 +83,27 @@ async function loadPage() {
 
 function allowDrop(ev) {
     ev.preventDefault();
+    document.getElementsByClassName("favorites-section")[0].style.outline = "1px solid #27ae60";
 }
 
+
 function drag(ev) {
-    ev.dataTransfer.setData("text", ev.currentTarget.id);
+    ev.dataTransfer.setData("text/html", ev.currentTarget.id);
+    let card = document.getElementById(ev.currentTarget.id);
+    ev.dataTransfer.setDragImage(card, 0, 0);
 }
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    var data = ev.dataTransfer.getData("text/html");
     if (!favourites.includes(data))
         addToFav(data);
+    removeOutline();
+}
+
+
+function removeOutline(ev) {
+    document.getElementsByClassName("favorites-section")[0].style.outline = "none";
 }
 
 
@@ -110,7 +120,7 @@ function showFavourites(targetID) {
                                     <span class="tileTxt">${countryInfo.name.common}</span>
                                 </div>
                                 <div class="flex-shrink-1 pe-3">
-                                    <strong onclick="removeFromFav('${countryCode}')">x</strong>
+                                    <strong onclick="removeFromFav('${countryCode}')" class="hover-default">x</strong>
                                 </div>
                               </div>`
     }
@@ -131,7 +141,7 @@ function generateCard(country, mode) {
                         <div name="dark" class="${mode}card-text"><strong>Capital:</strong> ${country.capital}</div>
                     </div>
                 </a>
-                    <div class="d-xl-none starDiv pb-4 pe-5"  onclick="toggleFav('${code}')"><i class="${starClass} fa-star" id="${code}Star"></i></div>
+                    <div name="dark" class="d-xl-none starDiv pb-4 pe-5"  onclick="toggleFav('${code}')"><i name="star" class="${starClass} fa-star" id="${code}Star"></i></div>
               </div>
             </div>`;
     return s;
@@ -176,9 +186,7 @@ function removeFromFav(code) {
 function getStarClass(code) {
     if (favourites.includes(code)) {
         return "fas starFav ";
-    } else if (checkMode()) {
-        return "far starDark ";
     } else {
-        return "far starLight ";
+        return "far";
     }
 }

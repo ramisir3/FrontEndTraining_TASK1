@@ -35,19 +35,19 @@ async function renderCountry() {
     bodyHTML += segment;
     document.getElementById("countryInfo").innerHTML = bodyHTML;
     let border = country.borders;
-    let mode2 = checkMode('dark-ref');
+    let mode2 = checkMode('dark-ref-shadow');
     if (border) {
         border.forEach(async element => {
             try {
                 let borderCountry = await fetchCountriesAlpha(element);
-                bodyHTML = `<a name="darkshadow" class="${mode} ${mode2} backBtn countryBtn" href="details.html?country=${borderCountry[0].cca3}">${borderCountry[0].name.common}</a>`
+                bodyHTML = `<a name="darkRefShadow" class="${mode2} backBtn countryBtn" href="details.html?country=${borderCountry[0].cca3}">${borderCountry[0].name.common}</a>`
                 document.getElementsByClassName("countriesBtns")[0].innerHTML += bodyHTML
             } catch (error) {
                 console.log(error);
             }
         })
     } else {
-        document.getElementsByClassName("countriesBtns")[0].innerHTML += `<button disabled name="darkShadow" class="${mode}backBtn countryBtn" type="button">None</button>`
+        document.getElementsByClassName("countriesBtns")[0].innerHTML += `<button disabled name="darkRefShadow" class="backBtn countryBtn" type="button">None</button>`
     }
 
 }
