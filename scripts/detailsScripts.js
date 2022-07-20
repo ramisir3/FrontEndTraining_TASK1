@@ -1,8 +1,8 @@
 async function renderCountry() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const countryName = urlParams.get('country');
-    let country = (await fetchCountriesByName(countryName))[0];
+    const countryCode = urlParams.get('country');
+    let country = (await fetchCountriesAlpha(countryCode))[0];
     let bodyHTML = '';
     let lang = country.languages;
     let languages = Object.values(lang);
@@ -40,14 +40,14 @@ async function renderCountry() {
         border.forEach(async element => {
             try {
                 let borderCountry = await fetchCountriesAlpha(element);
-                bodyHTML = `<a name="darkshadow" class="${mode} ${mode2} backBtn countryBtn" href="details.html?country=${borderCountry[0].name.common}">${borderCountry[0].name.common}</a>`
+                bodyHTML = `<a name="darkshadow" class="${mode} ${mode2} backBtn countryBtn" href="details.html?country=${borderCountry[0].cca3}">${borderCountry[0].name.common}</a>`
                 document.getElementsByClassName("countriesBtns")[0].innerHTML += bodyHTML
             } catch (error) {
                 console.log(error);
             }
         })
     } else {
-        document.getElementsByClassName("countriesBtns")[0].innerHTML += `<button name="darkShadow" class="backBtn countryBtn" type="button">None</button>`
+        document.getElementsByClassName("countriesBtns")[0].innerHTML += `<button disabled name="darkShadow" class="${mode}backBtn countryBtn" type="button">None</button>`
     }
 
 }

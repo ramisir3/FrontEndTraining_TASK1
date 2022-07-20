@@ -85,13 +85,15 @@ button i {
     border-width: 2px;
     border-radius: 2px;
     box-shadow: 0 3px 10px -7px #858585;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .searchBox {
     border: none;
     font-size: 25px;
     height: 80px;
-    width: 100%;
+    width: 90%;
 }
 
 .search-dark::placeholder {
@@ -110,6 +112,8 @@ button i {
     position: relative;
     height: 100px;
     font-size: 25px;
+    width: 30%;
+    margin-bottom: 70px;
     padding: 0 !important;
 }
 
@@ -167,9 +171,9 @@ button i {
 
 .gridItem {
     margin-top: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 1px 5px -3px #858585;
-    border-radius: 8px;
+    margin-bottom: 20px;
+    border-radius: 10px !important;
+    border: none !important;
 }
 
 .itemInfo {
@@ -185,7 +189,14 @@ h5 {
     width: 100%;
     height: 30%;
     object-fit: cover;
-    /* border-radius: 6px 6px 0 0; */
+}
+
+.countries {
+    margin-top: 30px !important;
+}
+
+.no-border{
+    border : none!important;
 }
 
 a:link,
@@ -196,8 +207,29 @@ a:active {
     text-decoration: none !important;
 }
 
+.starLight {
+    color: black;
+}
+
+.starDark {
+    color: white;
+}
+
+.starDiv {
+    text-align: right;
+    font-size: 35px;
+}
+
+.starFav {
+    color: #FFD700;
+}
+
 
 @media only screen and (min-width: 1400px) {
+
+    body {
+        overflow: hidden;
+    }
 
     .title {
         font-size: 20px;
@@ -226,6 +258,7 @@ a:active {
         width: 33%;
         align-items: center;
         justify-content: space-around;
+        margin: 0;
     }
 
     .searchBox {
@@ -237,11 +270,14 @@ a:active {
         font-size: 14px;
         height: 50px;
         width: 15%;
+        margin-bottom: 0;
     }
 
     .gridItem {
         margin-top: 10px;
+        margin-bottom: 40px;
         height: 320px;
+        box-shadow: 0 1px 5px -3px #858585;
     }
 
     .itemInfo {
@@ -258,5 +294,79 @@ a:active {
     .flagImg {
         width: 100%;
         height: 180px;
+    }
+
+    .scrolldown {
+        overflow-y: scroll;
+    }
+
+    .countries {
+        height: calc(100vh - 220px) !important;
+        width: 100%;
+        margin-top: 0 !important;
+    }
+
+    .favorites-section {
+        width: 20rem;
+        height: calc(100vh - 227px) !important;
+        background-color: white;
+    }
+
+    .favorites {
+        width: 100%;
+        height: calc(100vh - 300px) !important;
+    }
+
+    .tileFlag {
+        height: 25px;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 7px;
+        padding: 2px;
+    }
+
+    .favTile {
+        height: 40px;
+        padding: 5px;
+    }
+
+    .tileTxt {
+        padding-left: 15px;
+        font-weight: bolder;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+
+    .lightBar::-webkit-scrollbar-track {
+        background: white;
+    }
+
+
+    .lightBar::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: #b3b3b3;
+    }
+
+
+    .lightBar::-webkit-scrollbar-thumb:hover {
+        background: #858585;
+    }
+
+    .darkBar::-webkit-scrollbar-track {
+        background: #2b3945;
+    }
+
+
+    .darkBar::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: #858585;
+    }
+
+
+    .darkBar::-webkit-scrollbar-thumb:hover {
+        background: white;
     }
 }
