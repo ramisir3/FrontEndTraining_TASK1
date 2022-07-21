@@ -130,6 +130,8 @@ function showFavourites(targetID) {
 function generateCard(country, mode) {
     let code = country.cca3;
     let starClass = getStarClass(code);
+    let div = checkMode("dark-div ");
+    let starMode = checkMode() ? "starDark" : "starLight";
     let s = `<div class="col-xxl-4 mb-4 mb-xl-0" draggable="true" ondragstart="drag(event)"  id="${code}">
               <div name="dark" class="${mode} gridItem">
                 <a name="dark" href="./details.html?country=${country.cca3}" class="${mode} no-border card w-100">
@@ -141,7 +143,7 @@ function generateCard(country, mode) {
                         <div name="dark" class="${mode}card-text"><strong>Capital:</strong> ${country.capital}</div>
                     </div>
                 </a>
-                    <div name="dark" class="d-xl-none starDiv pb-4 pe-5"  onclick="toggleFav('${code}')"><i name="star" class="${starClass} fa-star" id="${code}Star"></i></div>
+                    <div name="dark-div" class="${div}d-xl-none starDiv pb-4 pe-5"><i name="star" class="${starMode} ${starClass} fa-star" id="${code}Star" onclick="toggleFav('${code}')"></i></div>
               </div>
             </div>`;
     return s;
@@ -160,10 +162,10 @@ function addToFav(code) {
     window.localStorage.setItem('favourites', JSON.stringify(favourites));
     document.getElementById(code + 'Star').classList.remove("far");
     document.getElementById(code + 'Star').classList.add("fas");
-    if (checkMode())
-        document.getElementById(code + 'Star').classList.remove("starDark");
-    else
-        document.getElementById(code + 'Star').classList.remove("starLight");
+    // if (checkMode())
+    //     document.getElementById(code + 'Star').classList.remove("starDark");
+    // else
+    //     document.getElementById(code + 'Star').classList.remove("starLight");
     document.getElementById(code + 'Star').classList.add("starFav");
     showFavourites("favorites-list");
     searchFilter(document.getElementById('filter').innerText);
@@ -171,13 +173,13 @@ function addToFav(code) {
 
 function removeFromFav(code) {
     favourites.splice(favourites.indexOf(code), 1);
-    document.getElementById(code + 'Star').classList.add("far");
     document.getElementById(code + 'Star').classList.remove("fas");
     document.getElementById(code + 'Star').classList.remove("starFav");
-    if (checkMode())
-        document.getElementById(code + 'Star').classList.add("starDark");
-    else
-        document.getElementById(code + 'Star').classList.add("starLight");
+    document.getElementById(code + 'Star').classList.add("far");
+    // if (checkMode())
+    //     document.getElementById(code + 'Star').classList.add("starDark");
+    // else
+    //     document.getElementById(code + 'Star').classList.add("starLight");
     window.localStorage.setItem('favourites', JSON.stringify(favourites));
     showFavourites("favorites-list");
     searchFilter(document.getElementById('filter').innerText);

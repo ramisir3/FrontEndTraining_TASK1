@@ -31,6 +31,10 @@ body {
     background-color: #202c37 !important;
 }
 
+.dark-div {
+    background-color: #2b3945 !important;
+}
+
 header {
     position: fixed;
     background-color: white;
@@ -218,10 +222,11 @@ a:active {
 .starDiv {
     text-align: right;
     font-size: 35px;
+    background-color: white;
 }
 
 .starFav {
-    color: #FFD700;
+    color: #FFD700!important;
 }
 
 
@@ -370,7 +375,7 @@ a:active {
         background: white;
     }
 
-    .hover-default:hover{
+    .hover-default:hover {
         cursor: pointer;
     }
 }

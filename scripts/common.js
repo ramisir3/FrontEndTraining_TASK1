@@ -16,6 +16,11 @@ function switchMode(page) {
             }
         });
 
+        let div = document.getElementsByName("dark-div");
+        div.forEach(element => {
+            element.classList.toggle("dark-div");
+        });
+
     } else {
         let refsShadow = document.getElementsByName("darkRefShadow");
         refsShadow.forEach(element => {
