@@ -16,30 +16,34 @@
     <script src="scripts/common.js"></script>
 </head>
 
-<body id="body" onload="loadPage()">
-    <header name="darkshadow">
-        <div name="dark" class="align-items-center container d-flex headerContainer justify-content-between mx-auto">
+<body id="body" class="body-back" onload="loadPage()">
+    <header name="dark-shadow" class="header-style">
+        <div name="dark" class="align-items-center container d-flex header-container justify-content-between mx-auto">
             <div class="title">Where in the world?</div>
-            <div name="dark" class="darkModeDiv">
-                <button name="dark" class="darkModeBTN" type="button" onclick="switchMode('index')"><i name="icon"
-                        class="far fa-moon" aria-hidden="true"></i>Dark Mode</button>
+            <div name="dark" class="dark-mode-div">
+                <button name="dark" class="dark-mode-btn" type="button" onclick="switchMode('index')">
+                    <i name="icon" class="far fa-moon inner-icon" aria-hidden="true"></i>
+                    Dark Mode
+                </button>
             </div>
         </div>
     </header>
     <div class="main container">
         <div
-            class="searchAndFilter d-xxl-flex justify-content-xxl-between flex-xxl-nowrap mx-auto align-items-center mb-xxl-0 mb-5">
-            <div class="searchBar" name="darkshadow">
+            class="search-and-filter d-xxl-flex justify-content-xxl-between flex-xxl-nowrap mx-auto align-items-center mb-xxl-0 mb-5">
+            <div class="search-bar" name="dark-shadow">
                 <i name="icon" class="fa-solid fa-search px-3"></i>
-                <input class="searchBox" type="search" name="dark" id="search"
+                <input class="search-box" type="search" name="dark" id="search"
                     oninput="searchFilter(document.getElementById('filter').innerText)"
                     placeholder="Search for a country...">
             </div>
-            <div name="darkshadow" class="filter">
-                <button name="darkshadow" id="filter"
-                    class="dropbtn d-flex justify-content-between align-items-center px-3">Filter by<i
-                        class="fa-solid fa-angle-down"></i></button>
-                <div name="darkshadow" class="Regions">
+            <div name="dark-shadow" class="filter">
+                <button name="dark-shadow" id="filter"
+                    class="drop-btn d-flex justify-content-between align-items-center px-3">
+                    Filter by
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div name="dark-shadow" class="Regions">
                     <a name="dark-ref" id="noFilter" onclick="searchFilter()">No filter</a>
                     <a name="dark-ref" id="Africa" onclick="searchFilter('Africa')">Africa</a>
                     <a name="dark-ref" id="Americas" onclick="searchFilter('Americas')">Americas</a>
@@ -50,17 +54,16 @@
                 </div>
             </div>
         </div>
-
         <div class="mt-5 pt-5 pt-xl-0 mt-xxl-4 d-xxl-flex">
             <div class="favorites-section d-none d-xxl-block mt-2 me-4 flex-shrink-0 ps-4 pt-4 pe-1" name="dark"
-                ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)" ondragleave="removeOutline(event)">
+                ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="allowDrop(event)"
+                ondragleave="removeOutline(event)">
                 <div>
-                    <h5>Favourites</h5>
+                    <h5 class="h5-custom">Favourites</h5>
                 </div>
-                <div class="favorites d-block scrolldown lightBar" id="favorites-list"></div>
+                <div class="favorites d-block scroll-down light-bar" id="favorites-list"></div>
             </div>
-            <div class="countries scrolldown row lightBar" id="countriesBody">
-            </div>
+            <div class="countries scroll-down row light-bar" id="countriesBody"></div>
         </div>
     </div>
 </body>

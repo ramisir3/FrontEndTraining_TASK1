@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-body {
+.body-back {
     background-color: #fafafa !important;
 }
 
@@ -35,7 +35,7 @@ body {
     background-color: #2b3945 !important;
 }
 
-header {
+.header-style {
     position: fixed;
     background-color: white;
     top: 0;
@@ -45,7 +45,7 @@ header {
     z-index: 2;
 }
 
-.headerContainer {
+.header-container {
     height: 80px;
 }
 
@@ -54,11 +54,11 @@ header {
     font-weight: 800;
 }
 
-.darkModeDiv {
+.dark-mode-div {
     width: 25%;
 }
 
-.darkModeBTN {
+.dark-mode-btn {
     padding-left: 10%;
     border: none;
     background: none;
@@ -66,7 +66,7 @@ header {
     font-weight: 800;
 }
 
-button i {
+.inner-icon {
     padding: 5px;
 }
 
@@ -80,11 +80,11 @@ button i {
     margin-right: 5%;
 }
 
-.searchAndFilter {
+.search-and-filter {
     height: 100px;
 }
 
-.searchBar {
+.search-bar {
     background-color: white;
     border-width: 2px;
     border-radius: 2px;
@@ -93,7 +93,7 @@ button i {
     margin-bottom: 30px;
 }
 
-.searchBox {
+.search-box {
     border: none;
     font-size: 25px;
     height: 80px;
@@ -105,7 +105,7 @@ button i {
     opacity: 1;
 }
 
-.darkShadow {
+.dark-shadow {
     background-color: #2b3945 !important;
     color: white;
     box-shadow: 0 3px 10px -7px #202c37 !important;
@@ -121,7 +121,7 @@ button i {
     padding: 0 !important;
 }
 
-.dropbtn {
+.drop-btn {
     background-color: #ffffff;
     border: none;
     width: 100%;
@@ -130,7 +130,7 @@ button i {
     border-radius: 5px;
 }
 
-.dropbtn i {
+.drop-btn i {
     margin-left: 20%;
 }
 
@@ -161,11 +161,11 @@ button i {
     display: block;
 }
 
-.searchBar>i {
+.search-bar>i {
     color: #858585;
 }
 
-.flagGrid {
+.flag-grid {
     display: block;
     margin-top: 40px;
     margin-left: 5%;
@@ -173,23 +173,23 @@ button i {
 }
 
 
-.gridItem {
+.grid-item {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px !important;
     border: none !important;
 }
 
-.itemInfo {
+.item-info {
     font-size: 30px;
 }
 
-h5 {
+.h5-custom {
     font-weight: 800 !important;
     font-size: 35px !important;
 }
 
-.flagImg {
+.flag-img {
     width: 100%;
     height: 30%;
     object-fit: cover;
@@ -211,28 +211,28 @@ a:active {
     text-decoration: none !important;
 }
 
-.starLight {
+.star-light {
     color: black;
 }
 
-.starDark {
+.star-dark {
     color: white;
 }
 
-.starDiv {
+.star-div {
     text-align: right;
     font-size: 35px;
     background-color: white;
 }
 
-.starFav {
-    color: #FFD700!important;
+.star-fav {
+    color: #FFD700 !important;
 }
 
 
 @media only screen and (min-width: 1400px) {
 
-    body {
+    .body-back {
         overflow: hidden;
     }
 
@@ -240,12 +240,12 @@ a:active {
         font-size: 20px;
     }
 
-    .darkModeBTN {
+    .dark-mode-btn {
         padding: 0;
         font-size: 14px;
     }
 
-    .darkModeDiv {
+    .dark-mode-div {
         width: auto;
     }
 
@@ -253,11 +253,11 @@ a:active {
         margin-top: 120px;
     }
 
-    .searchAndFilter {
+    .search-and-filter {
         height: auto;
     }
 
-    .searchBar {
+    .search-bar {
         display: flex;
         height: 50px;
         width: 33%;
@@ -266,7 +266,7 @@ a:active {
         margin: 0;
     }
 
-    .searchBox {
+    .search-box {
         height: auto;
         font-size: 14px;
     }
@@ -278,30 +278,30 @@ a:active {
         margin-bottom: 0;
     }
 
-    .gridItem {
+    .grid-item {
         margin-top: 10px;
         margin-bottom: 40px;
         height: 320px;
         box-shadow: 0 1px 5px -3px #858585;
     }
 
-    .itemInfo {
+    .item-info {
         padding: 0;
         margin: 10%;
         font-size: small;
     }
 
-    h5 {
+    .h5-custom {
         font-weight: 600 !important;
         font-size: 16px !important;
     }
 
-    .flagImg {
+    .flag-img {
         width: 100%;
         height: 180px;
     }
 
-    .scrolldown {
+    .scroll-down {
         overflow-y: scroll;
     }
 
@@ -322,7 +322,7 @@ a:active {
         height: calc(100vh - 300px) !important;
     }
 
-    .tileFlag {
+    .tile-flag {
         height: 25px;
         width: 40px;
         object-fit: cover;
@@ -330,12 +330,12 @@ a:active {
         padding: 2px;
     }
 
-    .favTile {
+    .fav-tile {
         height: 40px;
         padding: 5px;
     }
 
-    .tileTxt {
+    .tile-txt {
         padding-left: 15px;
         font-weight: bolder;
     }
@@ -345,33 +345,33 @@ a:active {
     }
 
 
-    .lightBar::-webkit-scrollbar-track {
+    .light-bar::-webkit-scrollbar-track {
         background: white;
     }
 
 
-    .lightBar::-webkit-scrollbar-thumb {
+    .light-bar::-webkit-scrollbar-thumb {
         border-radius: 3px;
         background: #b3b3b3;
     }
 
 
-    .lightBar::-webkit-scrollbar-thumb:hover {
+    .light-bar::-webkit-scrollbar-thumb:hover {
         background: #858585;
     }
 
-    .darkBar::-webkit-scrollbar-track {
+    .dark-bar::-webkit-scrollbar-track {
         background: #2b3945;
     }
 
 
-    .darkBar::-webkit-scrollbar-thumb {
+    .dark-bar::-webkit-scrollbar-thumb {
         border-radius: 3px;
         background: #858585;
     }
 
 
-    .darkBar::-webkit-scrollbar-thumb:hover {
+    .dark-bar::-webkit-scrollbar-thumb:hover {
         background: white;
     }
 

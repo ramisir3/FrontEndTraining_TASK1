@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-body {
+.body-back {
     background-color: #fafafa !important;
 }
 
@@ -26,17 +26,17 @@ body {
     color: white !important;
 }
 
-.darkShadow {
+.dark-shadow {
     background-color: #2b3945 !important;
     color: white;
     box-shadow: 0 3px 10px -7px #202c37 !important;
 }
 
-.whiteFont {
+.white-font {
     color: white;
 }
 
-header {
+.header-style {
     position: fixed;
     background-color: white;
     top: 0;
@@ -46,7 +46,7 @@ header {
     z-index: 2;
 }
 
-.headerContainer {
+.header-container {
     height: 80px;
 }
 
@@ -55,11 +55,11 @@ header {
     font-weight: 800;
 }
 
-.darkModeDiv {
+.dark-mode-div {
     width: 25%;
 }
 
-.darkModeBTN {
+.dark-mode-btn {
     padding-left: 10%;
     border: none;
     background: none;
@@ -67,7 +67,7 @@ header {
     font-weight: 800;
 }
 
-button i {
+.inner-icon {
     padding: 5px;
 }
 
@@ -75,7 +75,7 @@ button i {
     color: white !important;
 }
 
-.backBtn {
+.back-btn {
     background-color: white;
     margin-top: 15%;
     font-size: 30px;
@@ -92,14 +92,14 @@ button i {
     padding-right: 5%;
 }
 
-.countryBtn {
+.country-btn {
     color: black;
     width: fit-content;
     margin-top: 0;
     font-size: 25px;
 }
 
-.countriesBtns {
+.countries-btns {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -116,30 +116,30 @@ button i {
     margin-top: 10%;
 }
 
-.countryInfo {
+.country-info {
     text-align: left;
 }
 
-.flagImg {
+.flag-img {
     width: 100%;
     height: 600px;
 }
 
-h2 {
+.h2-custom {
     font-size: 40px;
     font-weight: 800 !important;
 }
 
-.col-xl>div {
+.country-info-text {
     font-size: 25px;
 }
 
-.borderCountries {
+.border-countries {
     display: block;
     margin-top: 40px;
 }
 
-.borderText {
+.border-text {
     font-size: 25px;
 }
 
@@ -174,30 +174,30 @@ a:active {
         font-size: 20px;
     }
 
-    .darkModeBTN {
+    .dark-mode-btn {
         padding: 0;
         font-size: 14px;
     }
 
-    .darkModeDiv {
+    .dark-mode-div {
         width: auto;
     }
 
-    .backBtn {
+    .back-btn {
         width: 8%;
         height: 30px;
         margin-top: 0;
         font-size: 14px;
     }
 
-    .countriesBtns {
+    .countries-btns {
         margin: 0;
         padding: 0;
         width: 100%;
         justify-content: left;
     }
 
-    .countryBtn {
+    .country-btn {
         margin-left: 10px;
         margin-bottom: 10px;
         padding: 3px;
@@ -207,22 +207,22 @@ a:active {
         margin-top: 5%;
     }
 
-    .col-xl>div {
+    .country-info-text {
         font-size: 16px;
     }
 
-    .flagImg {
+    .flag-img {
         width: 90%;
         height: 350px;
     }
 
 
-    .borderText {
+    .border-text {
         font-size: 16px;
         width: 30%;
     }
 
-    .borderCountries {
+    .border-countries {
         display: flex;
         width: 100%;
         height: 20px;

@@ -1,52 +1,54 @@
 function switchMode(page) {
-    window.localStorage.setItem('darkMode', JSON.stringify(!JSON.parse(window.localStorage.getItem('darkMode'))));
+    let darkMode = JSON.parse(window.localStorage.getItem('darkMode'));
+    let dark = document.getElementsByName("dark");
+    let icons = document.getElementsByName("icon");
+    let shadow = document.getElementsByName("dark-shadow");
+    let text = document.getElementsByName("text");
+    let refs = document.getElementsByName("dark-ref");
+
+    window.localStorage.setItem('darkMode', JSON.stringify(!darkMode));
 
     if (page == 'index') {
-        document.getElementById("search").classList.toggle("search-dark");
-        let scrollables = document.getElementsByClassName("scrolldown");
-        for (element of scrollables) {
-            element.classList.toggle("darkBar");
-            element.classList.toggle("lightBar");
-        }
+        let scrollables = document.getElementsByClassName("scroll-down");
         let stars = document.getElementsByName("star");
+        let div = document.getElementsByName("dark-div");
+
+        document.getElementById("search").classList.toggle("search-dark");
+        for (element of scrollables) {
+            element.classList.toggle("dark-bar");
+            element.classList.toggle("light-bar");
+        }
         stars.forEach(element => {
             if (!favourites.includes(element.parentElement.parentElement.ID)) {
-                element.classList.toggle("starDark");
-                element.classList.toggle("starLight");
+                element.classList.toggle("star-dark");
+                element.classList.toggle("star-light");
             }
         });
-
-        let div = document.getElementsByName("dark-div");
         div.forEach(element => {
             element.classList.toggle("dark-div");
         });
 
     } else {
-        let refsShadow = document.getElementsByName("darkRefShadow");
+        let refsShadow = document.getElementsByName("dark-ref-shadow");
+
         refsShadow.forEach(element => {
             element.classList.toggle("dark-ref-shadow");
         });
     }
-    document.getElementById("body").classList.toggle("very-dark-back");
 
-    let dark = document.getElementsByName("dark");
+    document.getElementById("body").classList.toggle("very-dark-back");
     dark.forEach(element => {
         element.classList.toggle("dark-back");
     });
-    let icons = document.getElementsByName("icon");
     icons.forEach(element => {
         element.classList.toggle("dark-icon");
     });
-    let shadow = document.getElementsByName("darkshadow");
     shadow.forEach(element => {
-        element.classList.toggle("darkShadow");
+        element.classList.toggle("dark-shadow");
     });
-
-    let text = document.getElementsByName("text");
     text.forEach(element => {
-        element.classList.toggle("whiteFont");
+        element.classList.toggle("white-font");
     });
-    let refs = document.getElementsByName("dark-ref");
     refs.forEach(element => {
         element.classList.toggle("dark-ref");
     });
