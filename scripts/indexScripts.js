@@ -93,17 +93,15 @@ async function loadPage() {
 
 function allowDrop(ev) {
     ev.preventDefault();
-    document.getElementsByClassName("favorites-section")[0].style.outline = "1px solid #27ae60";
+    document.getElementsByClassName("favorites-section")[0].classList.add("drop-list-dragover");
 }
 
 
 function drag(ev) {
     ev.dataTransfer.setData("text/html", ev.currentTarget.id);
-
-    let card = document.getElementById(ev.currentTarget.id);
+    let card = ev.currentTarget;
     ev.dataTransfer.setDragImage(card, 0, 0);
-
-    card.style.opacity = "0.5";
+    card.classList.add("dragged-element");
 }
 
 function drop(ev) {
@@ -116,8 +114,13 @@ function drop(ev) {
 }
 
 
-function removeOutline(ev) {
-    document.getElementsByClassName("favorites-section")[0].style.outline = "none";
+function removeOutline() {
+    document.getElementsByClassName("favorites-section")[0].classList.remove("drop-list-dragover");
+}
+
+
+function dragEnd(ev) {
+    document.getElementById(ev.currentTarget.id).classList.remove("dragged-element");
 }
 
 
@@ -147,7 +150,7 @@ function generateCard(country, darkModeClass) {
     let starClass = getStarClass(countryCode);
     let divMode = checkMode("dark-div");
     let starMode = checkMode() ? "star-dark" : "star-light";
-    let cardHTML = `<div class="col-xxl-4 mb-4 mb-xl-0" draggable="true" ondragstart="drag(event)"  id="${countryCode}">
+    let cardHTML = `<div class="col-xxl-4 mb-4 mb-xl-0" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"  id="${countryCode}">
               <div name="dark" class="${darkModeClass} grid-item">
                 <a name="dark" href="./details.html?country=${country.cca3}" class="${darkModeClass} no-border card w-100">
                     <img src="${country.flags.svg}" alt="${country.name.common}" class="flag-img card-img-top">

@@ -378,4 +378,12 @@ a:active {
     .hover-default:hover {
         cursor: pointer;
     }
+
+    .dragged-element {
+        opacity: 0.5;
+    }
+
+    .drop-list-dragover {
+        outline: 1px solid #27ae60;
+    }
 }

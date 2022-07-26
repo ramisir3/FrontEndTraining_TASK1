@@ -7,8 +7,7 @@ async function fetchCountriesAPI(url, name) {
         }
         return await res.json();
     } catch (error) {
-        let errorText = error;
-        return errorText;
+        return new Error("Server Error, please try again later.");
     }
 }
 async function fetchAllCountriesAPI() {
@@ -18,8 +17,7 @@ async function fetchAllCountriesAPI() {
         var res = await fetch(url);
         return await res.json();
     } catch (error) {
-        let errorText = error;
-        return errorText;
+        return new Error("Server Error, please try again later.");
     }
 }
 
@@ -31,8 +29,7 @@ async function fetchCountriesByName(name) {
         var res = await fetch(url);
         return await res.json();
     } catch (error) {
-        let errorText = error;
-        return errorText;
+        return new Error("Server Error, please try again later.");
     }
 }
 
@@ -43,7 +40,6 @@ async function fetchCountriesAlpha(name) {
         var res = await fetch(url);
         return await res.json();
     } catch (error) {
-        let errorText = error;
-        return errorText;
+        return new Error("Server Error, please try again later.");
     }
 }
